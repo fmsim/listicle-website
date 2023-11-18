@@ -1,18 +1,13 @@
-"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
 
 import Card from "../components/Card";
 
 export default function Home() {
-  const handleTitleClick = () => {
-    alert("Hi there!");
-  };
-
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <p onClick={handleTitleClick}>
+        <p>
           Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.js</code>
         </p>

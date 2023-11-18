@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import styles from "./styles.module.css";
 
 function Card({
@@ -5,18 +7,20 @@ function Card({
   subtitle = "Default title",
   link = "https://google.com",
 }) {
+  const [clickCount, setClickCount] = useState(0);
+
+  const handleClick = () => {
+    setClickCount((currentState) => currentState + 1);
+  };
+
   return (
-    <a
-      href={link}
-      className={styles.card}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <div className={styles.card} onClick={handleClick}>
       <h2>
         {title} <span>-&gt;</span>
       </h2>
       <p>{subtitle}</p>
-    </a>
+      <p>Clicked count: {clickCount}</p>
+    </div>
   );
 }
 
