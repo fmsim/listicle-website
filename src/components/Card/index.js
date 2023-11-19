@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 
 function Card({
@@ -8,6 +8,10 @@ function Card({
   link = "https://google.com",
 }) {
   const [clickCount, setClickCount] = useState(0);
+
+  useEffect(() => {
+    console.log(`Hello i was clicked ${clickCount} times`);
+  }, [clickCount]);
 
   const handleClick = () => {
     setClickCount((currentState) => currentState + 1);
